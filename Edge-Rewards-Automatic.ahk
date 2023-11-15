@@ -13,7 +13,7 @@ if TEXTFILELENGTH <= 0
 	exit
 }
 
-Loop, 30
+Loop, 34
 {
 	phrase := RWG()
 	Run, "C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe" ""%phrase%"", A_WorkingDir, Max, edgePID
