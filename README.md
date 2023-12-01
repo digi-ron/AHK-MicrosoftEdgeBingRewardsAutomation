@@ -32,3 +32,4 @@ This script is designed to be run as a scheduled task or as a simple shortcut as
 - Windows only, because AutoHotKey was Windows only last I checked, also even if it was cross compatible it references a folder structure that doesn't exist outside of Windows
 - This script assumes your main drive is "C:\\" and that the host system is 64-Bit. It's only coded in one location in the script so if this is not the case then just change that path string
 - This **_will_** mess up your search history with a bunch of nonsense searches if you care about that
+- UPDATE 01/12/2023 - The script is getting flaky seemingly because Bing is getting smarter against automated searches. I've added some URL params that it seems to expect and randomized the wait time to combat this, but it may not register every search anyways.
