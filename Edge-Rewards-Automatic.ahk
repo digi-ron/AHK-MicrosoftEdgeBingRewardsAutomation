@@ -18,7 +18,9 @@ Loop, 34
 	phrase := RWG()
 	Run, "C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe" ""%phrase%"", A_WorkingDir, Max, edgePID
 	; wait for bing to recognize the search
-	sleep, 5000
+	; randomized because bing seems to be getting smarter
+	Random, SleepTime, 5000, 10000
+	sleep, %SleepTime%
 	phrase := ""
 	sleep 1000
 }
