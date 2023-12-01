@@ -32,10 +32,12 @@ RWG()
 	global TEXTFILELENGTH
 	
 	Random, Word1Index, 1, %TEXTFILELENGTH%
+	Random, Word2Index, 1, %TEXTFILELENGTH%
 	
 	FileReadLine, Word1, %TEXTFILEPATH%, %Word1Index%
+	FileReadLine, Word2, %TEXTFILEPATH%, %Word2Index%
 
-	outputVariable := "bing.com/search?q=" . Word1 . "&qs=n&form=QBRE&sp=-1&lq=0&pq=" . Word1 . "&sc=11-6&sk=&ghsh=0&ghacc=0&ghpl="
+	outputVariable := "bing.com/search?q=" . Word1 . "%20" . Word2 . "&qs=n&form=QBRE&sp=-1&lq=0&pq=" . Word1 . "&sc=11-6&sk=&ghsh=0&ghacc=0&ghpl="
 	
 	return %outputVariable%
 }
