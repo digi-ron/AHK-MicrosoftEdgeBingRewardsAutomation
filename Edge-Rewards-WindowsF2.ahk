@@ -15,12 +15,14 @@ if TEXTFILELENGTH <= 0
 
 #F2::
 {
-	Loop, 30
+	Loop, 34
 	{
 		phrase := RWG()
 		Run, "C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe" ""%phrase%"", A_WorkingDir, Max, edgePID
 		; wait for bing to recognize the search
-		sleep, 5000
+		; randomized because bing seems to be getting smarter
+		Random, SleepTime, 5000, 10000
+		sleep, %SleepTime%
 		phrase := ""
 		sleep 1000
 	}
@@ -36,13 +38,11 @@ RWG()
 	
 	Random, Word1Index, 1, %TEXTFILELENGTH%
 	Random, Word2Index, 1, %TEXTFILELENGTH%
-	Random, Word3Index, 1, %TEXTFILELENGTH%
 	
 	FileReadLine, Word1, %TEXTFILEPATH%, %Word1Index%
 	FileReadLine, Word2, %TEXTFILEPATH%, %Word2Index%
-	FileReadLine, Word3, %TEXTFILEPATH%, %Word3Index%
-	
-	outputVariable := "bing.com/search?q=" . Word1 . "`%20" . Word2 . "`%20" . Word3
+
+	outputVariable := "bing.com/search?q=" . Word1 . "%20" . Word2 . "&qs=n&form=QBRE&sp=-1&lq=0&pq=" . Word1 . "&sc=11-6&sk=&ghsh=0&ghacc=0&ghpl="
 	
 	return %outputVariable%
 }
