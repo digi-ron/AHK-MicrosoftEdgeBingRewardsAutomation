@@ -28,8 +28,10 @@ This script is designed to be run as a scheduled task or as a simple shortcut as
 ---
 
 ## Limitations
-- I could never get AHK to kill all the PIDs for msedge.exe reliably, so once the script is complete it's up to the user to close the window with 30 tabs it creates. I believe this could be done by looping while not an error, but as this is just so I can continue living in my Google-Centric bubble and occasionally claim stuff from MS, I decided this was acceptable
 - Windows only, because AutoHotKey was Windows only last I checked, also even if it was cross compatible it references a folder structure that doesn't exist outside of Windows
 - This script assumes your main drive is "C:\\" and that the host system is 64-Bit. It's only coded in one location in the script so if this is not the case then just change that path string
 - This **_will_** mess up your search history with a bunch of nonsense searches if you care about that
+
+## Dev Notes
 - UPDATE 01/12/2023 - The script is getting flaky seemingly because Bing is getting smarter against automated searches. I've added some URL params that it seems to expect and randomized the wait time to combat this, but it may not register every search anyways.
+- UPDATE 09/12/2023 - Previous bug with being unable to kill all of the msedge.exe PIDs is fixed, turns out it was in the official doco and I just didn't see it before
