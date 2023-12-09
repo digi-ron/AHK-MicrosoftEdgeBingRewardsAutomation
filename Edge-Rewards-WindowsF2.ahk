@@ -1,5 +1,6 @@
 ; developer variables
 TEXTFILEPATH := A_WorkingDir . "\words.txt"
+PROCNAME := "msedge.exe"
 
 ;working code
 Loop, read, %TEXTFILEPATH%
@@ -27,6 +28,10 @@ if TEXTFILELENGTH <= 0
 		sleep 1000
 	}
 	MsgBox Automation Complete. Exiting...
+	Loop {
+		Process, Close, % PROCNAME
+		Process, Exist, % PROCNAME  ; Improves reliability in some cases.
+	} Until not ErrorLevel
 	ExitApp
 }
 
