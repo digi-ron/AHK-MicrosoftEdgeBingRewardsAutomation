@@ -1,5 +1,6 @@
 ; developer variables
 TEXTFILEPATH := A_WorkingDir . "\words.txt"
+PROCNAME := "msedge.exe"
 
 ;working code
 Loop, read, %TEXTFILEPATH%
@@ -25,6 +26,10 @@ Loop, 34
 	sleep 1000
 }
 MsgBox Automation Complete. Exiting...
+Loop {
+	Process, Close, % PROCNAME
+	Process, Exist, % PROCNAME  ; Improves reliability in some cases.
+} Until not ErrorLevel
 ExitApp
 
 ; description: this simply chooses 3 random words from a words.txt file in the same directory
