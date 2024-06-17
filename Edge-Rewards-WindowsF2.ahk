@@ -27,7 +27,7 @@ if TEXTFILELENGTH <= 0
 		phrase := ""
 		sleep 1000
 	}
-	MsgBox Automation Complete. Exiting...
+	MsgBox Automation Complete. Press OK to exit...
 	Loop {
 		Process, Close, % PROCNAME
 		Process, Exist, % PROCNAME  ; Improves reliability in some cases.
