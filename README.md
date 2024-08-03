@@ -1,3 +1,9 @@
+## STATUS
+***UPDATE as of 4th August 2024***
+This repo is to be archived, as Microsoft has started making moves against automated searches, limiting people to 3 searches per 15 minutes. This change makes this script in it's current state non-viable, and in order to script something that would wait 15mins between runs and run everything minimized, I wouldn't choose AutoHotKey as my first choice.
+
+The repo should remain visible for the forseeable future as an example on simple automation but no changes will be made
+
 # AHK-MicrosoftEdgeBingRewardsAutomation
 AHK Script to automate the daily searches for MS Edge
 
